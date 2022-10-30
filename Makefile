@@ -6,6 +6,34 @@ include config.mk
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 
+ifeq ($(BRAVE), y)
+	CFLAGS += -D BRAVE
+endif
+
+ifeq ($(VIRTMANAGER), y)
+	CFLAGS += -D VIRTMANAGER
+endif
+
+ifeq ($(LF), y)
+	CFLAGS += -D LF
+endif
+
+ifeq ($(GODOT), y)
+	CFLAGS += -D GODOT
+endif
+
+ifeq ($(RETROARCH), y)
+	CFLAGS += -D RETROARCH
+endif
+
+ifeq ($(NEOMUTT), y)
+	CFLAGS += -D NEOMUTT 
+endif
+
+ifeq ($(NCMPCPP), y)
+	CFLAGS += -D NCMPCPP
+endif
+
 all: options dwm
 
 options:

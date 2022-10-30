@@ -97,13 +97,30 @@ static Key keys[] = {
 	STACKKEYS(MODKEY|ShiftMask,                	        push)
 	{ MODKEY,                       XK_p,      	        spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, 	        spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_b,      	        spawn,          SHCMD("brave") },
 	{ MODKEY|ShiftMask,             XK_h,      	        spawn,          SHCMD(TERMINAL " -e htop") },
-	{ MODKEY|ShiftMask,             XK_f,      	        spawn,          SHCMD(TERMINAL " -e lf-ueberzug") },
-	{ MODKEY|ShiftMask,             XK_e,      	        spawn,          SHCMD(TERMINAL " -e nvim") },
-	{ MODKEY|ShiftMask,             XK_w,      	        spawn,          SHCMD(TERMINAL " -e nmtui") },
+    { MODKEY|ShiftMask,             XK_e,      	        spawn,          SHCMD(TERMINAL " -e nvim") },
+    { MODKEY|ShiftMask,             XK_w,      	        spawn,          SHCMD(TERMINAL " -e nmtui") },
+#ifdef BRAVE
+    { MODKEY|ShiftMask,             XK_b,      	        spawn,          SHCMD("brave") },
+#endif
+#ifdef VIRTMANAGER
+    { MODKEY|ShiftMask,             XK_v,      	        spawn,          SHCMD("virt-manager") },
+#endif
+#ifdef LF
+    { MODKEY|ShiftMask,             XK_f,      	        spawn,          SHCMD(TERMINAL " -e lf-ueberzug") },
+#endif
+#ifdef GODOT 
+	{ MODKEY|ShiftMask,             XK_g,      	        spawn,          SHCMD("godot") },
+#endif
+#ifdef RETROARCH
+	{ MODKEY|ShiftMask,             XK_r,      	        spawn,          SHCMD("retroarch") },
+#endif 
+#ifdef NCMPCPP
 	{ MODKEY|ShiftMask,             XK_m,      	        spawn,          SHCMD(TERMINAL " -e ncmpcpp-ueberzug") },
+#endif
+#ifdef NEOMUTT
 	{ MODKEY|ShiftMask,             XK_n,      	        spawn,          SHCMD(TERMINAL " -e neomutt") },
+#endif 
 	{ MODKEY|ShiftMask,             XK_l,      	        spawn,          SHCMD("passmenu") },
 	{ MODKEY,                       XK_b,      	        togglebar,      {0} },
 	{ MODKEY,                       XK_i,      	        incnmaster,     {.i = +1 } },

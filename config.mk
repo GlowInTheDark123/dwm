@@ -3,6 +3,15 @@ VERSION = 6.2
 
 # Customize below to fit your system
 
+# installed programs
+BRAVE = y
+VIRTMANAGER = n
+LF = y
+GODOT = y
+RETROARCH = y
+NEOMUTT = y
+NCMPCPP = y
+
 # paths
 PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
