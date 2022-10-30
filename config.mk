@@ -3,7 +3,7 @@ VERSION = 6.2
 
 # Customize below to fit your system
 
-# installed programs
+# programs bound to keys
 BRAVE = y
 VIRTMANAGER = n
 LF = y
