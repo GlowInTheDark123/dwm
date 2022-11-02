@@ -5,12 +5,12 @@ VERSION = 6.2
 
 # programs bound to keys
 BRAVE = y
-VIRTMANAGER = n
-LF = y
-GODOT = y
-RETROARCH = y
-NEOMUTT = y
-NCMPCPP = y
+VIRTMANAGER = y
+LF = n
+GODOT = n
+RETROARCH = n
+NEOMUTT = n
+NCMPCPP = n
 
 # paths
 PREFIX = /usr/local

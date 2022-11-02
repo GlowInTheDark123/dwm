@@ -1,9 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-/* program definitions */
-#define TERMINAL "st"
-#define STATUSBAR "dwmblocks"
-
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
@@ -86,8 +82,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0";
 static char dmenulines[3] = "20";
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-c", "-l", dmenulines, NULL };
-static const char *termcmd[]  = { TERMINAL, NULL };
+static const char* dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-c", "-l", dmenulines, NULL };
 
 #include <X11/XF86keysym.h>
 
@@ -96,10 +91,10 @@ static Key keys[] = {
 	STACKKEYS(MODKEY,                          	        focus)
 	STACKKEYS(MODKEY|ShiftMask,                	        push)
 	{ MODKEY,                       XK_p,      	        spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, 	        spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_h,      	        spawn,          SHCMD(TERMINAL " -e htop") },
-    { MODKEY|ShiftMask,             XK_e,      	        spawn,          SHCMD(TERMINAL " -e nvim") },
-    { MODKEY|ShiftMask,             XK_w,      	        spawn,          SHCMD(TERMINAL " -e nmtui") },
+	{ MODKEY|ShiftMask,             XK_Return, 	        spawn,          SHCMD("$TERMINAL") },
+	{ MODKEY|ShiftMask,             XK_h,      	        spawn,          SHCMD("$TERMINAL -e htop") },
+    { MODKEY|ShiftMask,             XK_e,      	        spawn,          SHCMD("$TERMINAL -e nvim") },
+    { MODKEY|ShiftMask,             XK_w,      	        spawn,          SHCMD("$TERMINAL -e nmtui") },
 #ifdef BRAVE
     { MODKEY|ShiftMask,             XK_b,      	        spawn,          SHCMD("brave") },
 #endif
@@ -107,7 +102,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_v,      	        spawn,          SHCMD("virt-manager") },
 #endif
 #ifdef LF
-    { MODKEY|ShiftMask,             XK_f,      	        spawn,          SHCMD(TERMINAL " -e lf-ueberzug") },
+    { MODKEY|ShiftMask,             XK_f,      	        spawn,          SHCMD("$TERMINAL -e lf-ueberzug") },
 #endif
 #ifdef GODOT 
 	{ MODKEY|ShiftMask,             XK_g,      	        spawn,          SHCMD("godot") },
@@ -116,10 +111,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_r,      	        spawn,          SHCMD("retroarch") },
 #endif 
 #ifdef NCMPCPP
-	{ MODKEY|ShiftMask,             XK_m,      	        spawn,          SHCMD(TERMINAL " -e ncmpcpp-ueberzug") },
+	{ MODKEY|ShiftMask,             XK_m,      	        spawn,          SHCMD("$TERMINAL -e ncmpcpp-ueberzug") },
 #endif
 #ifdef NEOMUTT
-	{ MODKEY|ShiftMask,             XK_n,      	        spawn,          SHCMD(TERMINAL " -e neomutt") },
+	{ MODKEY|ShiftMask,             XK_n,      	        spawn,          SHCMD("$TERMINAL -e neomutt") },
 #endif 
 	{ MODKEY|ShiftMask,             XK_l,      	        spawn,          SHCMD("passmenu") },
 	{ MODKEY,                       XK_b,      	        togglebar,      {0} },
